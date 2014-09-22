@@ -3,10 +3,11 @@
     Created on : Sep 20, 2014, 12:49:22 PM
     Author     : Don
 --%>
+
+<%@page import="model.MenuItem"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.List"%>
-<%@page import="model.MenuItem"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu Options</title>
     </head>
-    <body>
+    <body><center><br><br><br>
         <select>
             <%
                 List<MenuItem> items = new ArrayList<MenuItem>();
@@ -30,5 +31,6 @@
                 }
             %>
         </select>
+    </center>
     </body>
 </html>
