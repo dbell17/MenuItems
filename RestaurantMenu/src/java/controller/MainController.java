@@ -44,13 +44,13 @@ public class MainController extends HttpServlet {
         if (action.equals("getOriginalList")) {
             List<model.MenuItem> items = service.getMenuItems();
             request.setAttribute("menuItems", items);
-            destination = "menuPage2.jsp";
+            destination = "menuOptions2.jsp";
         } else if (action.equals("processOrder")) {
             String itemOrdered = request.getParameter("menuItemSelected");
             service.processOrder(itemOrdered);
             HttpSession session = request.getSession();
             session.setAttribute("order", itemOrdered);
-            destination = "/orderConfirmationPage.jsp";
+            destination = "/orderCompletion.jsp";
         }
         RequestDispatcher view
                 = request.getRequestDispatcher(destination);
