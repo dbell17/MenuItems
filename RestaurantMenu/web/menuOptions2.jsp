@@ -25,11 +25,12 @@
     </head>
     <body>
         <form id='form1' name='form1' method='POST' action='MainController?action=processOrder'>
-        <select name="menuItemSelected">
+       
             <c:forEach var="item" items="${menuItems}" varStatus="rowCount">
-                <option value="${item.name}, ${item.price}">${item.name}, ${item.price}</option>
+
+                <input type ="checkbox" name="menuItemCheckbox" value="${item.name}, ${item.price}">${item.name}, ${item.price} <br>
             </c:forEach>
-        </select>
+        
             <input type="submit" name="Submit" value="Submit"/>
         </form>
     </body>

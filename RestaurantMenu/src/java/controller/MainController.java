@@ -46,8 +46,8 @@ public class MainController extends HttpServlet {
             request.setAttribute("menuItems", items);
             destination = "menuOptions2.jsp";
         } else if (action.equals("processOrder")) {
-            String itemOrdered = request.getParameter("menuItemSelected");
-            service.processOrder(itemOrdered);
+            String[] itemOrdered = request.getParameterValues("menuItemCheckbox");
+            service.processOrder(itemOrdered.toString());
             HttpSession session = request.getSession();
             session.setAttribute("order", itemOrdered);
             destination = "/orderCompletion.jsp";

@@ -10,27 +10,33 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Object obj = request.getAttribute("menuItems");
+    if (obj == null) {
+        response.sendRedirect("MainController?action=getOriginalList");
+    }
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu Options</title>
     </head>
     <body><center><br><br><br>
-        <select>
+        
             <%
                 List<MenuItem> items = new ArrayList<MenuItem>();
-                Object obj = request.getAttribute("menuItems");
-                if (obj != null) {
-                    items = (List<MenuItem>) obj;
+                Object obj2 = request.getAttribute("menuItems");
+                if (obj2 != null) {
+                    items = (List<MenuItem>) obj2;
                 }
 
                 for (MenuItem item : items) {
-                    out.println("<option value='" + item.getName()
-                            + ", " + item.getPrice() + "'>"
-                            + item.getName() + ", " + item.getPrice() + "</option>");
+                    out.println("<input type='checkbox' name='menuItemCheckbox' value='" + item.getName()
+                            + ", " + item.getPrice()
+                            + item.getName() + ", " + item.getPrice() );
                 }
             %>
-        </select>
+        
     </center>
     </body>
 </html>
