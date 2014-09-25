@@ -32,6 +32,16 @@
             }
         
         %>
+        <br><br>
+        
+        <%
+            /*
+            double orderTotal=0;
+             Double[] taxList = (Double[])session.getAttribute("order");
+            for (double s : taxList){
+                orderTotal +=s;
+        */    
+        %>
         
     </body>
 </html>
